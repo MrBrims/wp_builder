@@ -1,0 +1,30 @@
+.tab {
+  &__nav-inner {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  &__nav {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    cursor: pointer;
+    user-select: none;
+    &.--active-tab {
+      background-color: #999;
+    }
+    & + .tab__nav {
+      margin-left: 10px;
+    }
+  }
+  &__content {
+    display: none;
+    color: #fff;
+    &.--active-tab {
+      display: block;
+    }
+  }
+}

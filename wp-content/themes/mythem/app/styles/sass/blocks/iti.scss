@@ -1,0 +1,13 @@
+.iti {
+  width: 100%;
+}
+
+.iti__flag {
+  background-image: url("../images/dist/webp/flags.webp");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {
+    background-image: url("../images/dist/webp/flags@2x.webp");
+  }    
+}

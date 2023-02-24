@@ -1,0 +1,35 @@
+.form {
+  user-select: none;
+  &__counter {
+    display: flex;
+    gap: 10px;
+  }
+  &__counter-btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+    background-color: #fff;
+  }
+  &__checkbox-custom {
+    @include check-hidden;
+    &:checked + .form__checkbox-style {
+      background-color: $accent;
+      border: none;
+      background-image: url(../images/dist/icons/checkbox.svg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 10px;
+    }
+  }
+  &__checkbox-style {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    display: block;
+  }
+}

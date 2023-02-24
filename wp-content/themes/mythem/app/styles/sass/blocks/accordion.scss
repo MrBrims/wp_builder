@@ -1,0 +1,19 @@
+.accordion {
+  color: #fff;
+  &__item {
+    margin-bottom: 20px;
+  }
+  &__head {
+    padding: 20px;
+    border: 1px solid #999;
+  }
+  &__content {
+    padding: 20px;
+    border: 1px solid #999;
+    border-top: none;
+    display: none;
+  }
+  &__item.--active .accordion__content {
+    display: block;
+  }
+}

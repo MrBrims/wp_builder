@@ -1,3 +1,11 @@
-# Ignore wp-config.php and .htaccess
+# Ignore wp-config.php, git files and .htaccess
 wp-config.php
 .htaccess
+/.git/
+
+# Ignore them file
+/wp-content/themes/mythem/node_modules
+/wp-content/themes/mythem/Thumbs.db
+/wp-content/themes/mythem/*.DS_Store
+/wp-content/themes/mythem/package-lock.json
+/wp-content/themes/mythem/debug.log

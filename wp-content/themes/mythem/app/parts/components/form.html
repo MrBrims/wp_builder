@@ -1,0 +1,46 @@
+<form class="form" action="#">
+  <div class="form__box">
+    <label class="form__label">
+      <span class="form__label-text">
+        Телефон
+      </span>
+      <input class="form__input" id="phone" type="tel">
+    </label>
+  </div>
+  <div class="form__box">
+    <label class="form__label" for="header-count">
+      <span class="form__label-text">
+        Счетчик
+      </span>
+    </label>
+    <div class="form__counter">
+      <div data-id="decrement" class="form__counter-btn counter-btn">-</div>
+      <input class="form__input count-input" id="header-count" name="count" type="number" value="40" max="1000" min="0"
+        step="5" />
+      <div data-id="increment" class="form__counter-btn counter-btn">+</div>
+    </div>
+  </div>
+  <div class="form__box">
+    <label class="form__label">
+      <span class="form__label-text">
+        Календарь
+      </span>
+      <div class="form__date-box">
+        <input class="form__date-input" placeholder="Дата" id="header-deadline" autocomplete="off" name="deadline"
+          type="text" />
+      </div>
+    </label>
+  </div>
+  <div class="form__box">
+    <label class="form__label">
+      <span class="form__label-text">
+        Кастомный чекбокс
+      </span>
+      <input class="form__input form__checkbox-custom checkbox-custom" type="checkbox">
+      <span class="form__checkbox-style"></span>
+    </label>
+  </div>
+  <div class="form__box">
+    <!--#include virtual="/parts/components/custom-select.html" -->
+  </div>
+</form>

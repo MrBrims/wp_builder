@@ -1,0 +1,30 @@
+.slider {
+  position: relative;
+  user-select: none;
+  &__body {
+    height: 100%;
+  }
+  &__wrapper {
+  }
+  &__slide {
+  }
+  &__link {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  &__img {
+  }
+  &__next,
+  &__prev {
+    color: #fff;
+    cursor: pointer;
+  }
+  &__next {
+  }
+  &__prev {
+  }
+  &__nav {
+  }
+}
