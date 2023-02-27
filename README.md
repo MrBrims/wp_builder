@@ -6,6 +6,6 @@
 
 <ol>
 	<li>Clone or <a href="https://github.com/MrBrims/wp_builder/archive/master.zip">Download</a> <strong>Builder</strong> from GitHub</li>
-	<li>Install Node Modules: <strong>npm i</strong></li>
+	<li>Install Node Modules in theme: <strong>npm i</strong></li>
 	<li>Run: <strong>gulp</strong></li>
 </ol>

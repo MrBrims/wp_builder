@@ -87,7 +87,7 @@ function images() {
 }
 
 function fontWoff() {
-  return src(['app/fonts/src/**/*.ttf'])
+  return src(['app/fonts/**/*.ttf'])
     .pipe(changed('app/fonts/dist'))
     .pipe(ttf2woff2())
     .pipe(dest('assets/fonts'))

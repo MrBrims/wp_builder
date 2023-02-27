@@ -28,9 +28,19 @@ class General
     remove_action('rest_api_init', 'rest_api_default_filters', 10);
     remove_action('parse_request', 'rest_api_loaded');
 
+    // Удаление отступа от админ панельки WP
+    add_theme_support('admin-bar', array('callback' => '__return_false'));
+
+    // Функции General.php
     add_action('wp_enqueue_scripts', [$this, 'connectedStylesAndScripts']);
     add_action('do_robotstxt', [$this, 'addedRobotsTxt']);
     add_filter('upload_mimes', [$this, 'svgUploadAllow']);
+
+    // Костыль для Carbon Field (отображение миниатюр загруженных файлов)
+    add_action('admin_enqueue_scripts', function () {
+      wp_enqueue_style('style-admin', get_template_directory_uri() . '/assets/css/admin.css');
+      wp_enqueue_script('script-admin', get_template_directory_uri() . '/assets/js/admin.js');
+    }, 99);
 
   }
 
