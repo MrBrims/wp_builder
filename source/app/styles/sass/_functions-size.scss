@@ -1,0 +1,81 @@
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return calc($number / ($number * 0 + 1px));
+  }
+
+  @return $number;
+}
+
+@function calcFluidSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+  $f-min: strip-unit($f-min);
+  $f-max: strip-unit($f-max);
+  $w-min: strip-unit($w-min);
+  $w-max: strip-unit($w-max);
+  
+	$k: calc(($f-max - $f-min) / ($w-max - $w-min));
+	$b: $f-min - $k * $w-min;
+
+	$b: $b + $units;
+
+	@return calc( #{$k} * 100vw + #{$b} );
+}
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+  
+  font-size: $f-min;
+  
+  @media (min-width: $w-min) {
+    @if ($fallback) {
+      font-size: $fallback;
+    }
+    font-size: calcFluidSize($f-min, $f-max, $w-min, $w-max, px);  
+  }
+  @media (min-width: $w-max) {
+    font-size: $f-max;
+  }
+}
+
+@mixin fluidLineHeight($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+  
+  line-height: $f-min;
+  
+  @media (min-width: $w-min) {
+    @if ($fallback) {
+      line-height: $fallback;
+    }
+    line-height: calcFluidSize($f-min, $f-max, $w-min, $w-max, px);  
+  }
+  @media (min-width: $w-max) {
+    line-height: $f-max;
+  }
+}
+
+@mixin fluidPaddingLR($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+  
+  padding: 0 $f-min;
+  
+  @media (min-width: $w-min) {
+    @if ($fallback) {
+      padding: 0 $fallback;
+    }
+    padding: 0 calcFluidSize($f-min, $f-max, $w-min, $w-max, px);  
+  }
+  @media (min-width: $w-max) {
+    padding: 0 $f-max;
+  }
+}
+
+@mixin fluidMarginTB($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+  
+  margin: $f-min 0;
+  
+  @media (min-width: $w-min) {
+    @if ($fallback) {
+      margin: $fallback 0;
+    }
+    margin: calcFluidSize($f-min, $f-max, $w-min, $w-max, px) 0;  
+  }
+  @media (min-width: $w-max) {
+    margin: $f-max 0;
+  }
+}

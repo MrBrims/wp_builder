@@ -1,6 +1,6 @@
 let preprocessor = 'sass', // Preprocessor (sass, less, styl); 'sass' also work with the Scss syntax in blocks/ folder.
 		fileswatch   = 'html,htm,txt,json,md,woff2', // List of files extensions for watching & hard reload
-    themname     = 'mythem' // WP Theme Name
+    themname     = 'maintheme' // WP Theme Name
 
 import pkg from 'gulp'
 const { gulp, src, dest, parallel, series, watch } = pkg
@@ -99,6 +99,11 @@ function phpDest() {
     .pipe(dest(`../wp-content/themes/${themname}/`))
 }
 
+function otherDest() {
+  return src(['style.css', 'screenshot.png'])
+    .pipe(dest(`../wp-content/themes/${themname}/`))
+}
+
 async function cleandist() {
 	await deleteAsync('assets/**/*', { force: true })
 }
@@ -127,8 +132,8 @@ function startwatch() {
   watch('app/fonts/src/*', { usePolling: true }, fontWoff)
 }
 
-export { scripts, styles, images, fontWoff, phpDest, deploy }
-export let assets = series(scripts, styles, images, fontWoff, phpDest)
-export let build = series(cleandist, images, fontWoff, scripts, styles, phpDest)
+export { scripts, styles, images, fontWoff, phpDest, otherDest, deploy }
+export let assets = series(scripts, styles, images, fontWoff, phpDest, otherDest)
+export let build = series(cleandist, images, fontWoff, scripts, styles, phpDest, otherDest)
 
-export default series(scripts, styles, images, fontWoff, phpDest, startwatch)
+export default series(scripts, styles, images, fontWoff, phpDest, otherDest, startwatch)

@@ -6,6 +6,10 @@ html
 body.--lock
   overflow: hidden
 
+h2 
+  @include fluidFontSize(26px, 40px, 480px, 1280px, 26px)
+  @include fluidLineHeight(32px, 46px, 480px, 1280px, 46px)
+
 #wpadminbar
   top: auto
   bottom: 0
@@ -20,11 +24,11 @@ body.--lock
 
 .container
   max-width: 1230px
-  padding: 0 15px
+  @include fluidPaddingLR(10px, 15px, 480px, 1024px, 10px)
   margin: 0 auto
 
 .section
-  padding: 40px 0
+  @include fluidMarginTB(40px, 80px, 480px, 1024px, 40px)
 
-.title
-  font-size: 40px
+.layot 
+  width: calc((100% - (var(--elements) - 1) * var(--gap)) / (var(--elements)))

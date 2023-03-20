@@ -1,9 +1,7 @@
 // USER VARIABLES SECTION
 
 $accent: orange // Accent Color
-$fontsize: 16px // Body Font Size
 $textcolor: #333 // Text Color
-$lineheight: 1.65 // Document Line Height
 $userfont: nameFont, sans-serif // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 
@@ -42,7 +40,9 @@ $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font
 // HOVER
 
 @mixin hover
-  opacity: .7
+  transition: opacity .3s eaese-in
+  &::before
+    opacity: .7
 
 // BACKGROUND BEFORE ELEMENT
 
@@ -72,8 +72,8 @@ input, textarea
 
 body
   font-family: $userfont
-  font-size: $fontsize
-  line-height: $lineheight
+  @include fluidFontSize(16px, 18px, 480px, 1280px, 18px)
+  @include fluidLineHeight(22px, 28px, 480px, 1280px, 28px)
   color: $textcolor
   max-width: 1920px
   position: relative
