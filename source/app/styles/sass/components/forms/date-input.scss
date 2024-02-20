@@ -1,0 +1,9 @@
+.datepicker-picker button {
+  background-color: $accent;
+  color: #fff;
+  border: none;
+}
+
+/** HTML code
+  <input class="date-input" name="deadline" type="text" placeholder="<?php echo date("d.m.Y"); ?>" autocomplete="off" onfocus="(this.value='<?php echo date('d.m.Y'); ?>')" readonly required />
+*/

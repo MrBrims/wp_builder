@@ -1,15 +1,14 @@
-import intlTelInput from 'intl-tel-input';
+import intlTelInput from 'intl-tel-input'
 
 export function inputPhoneCustom() {
-  const input = document.getElementById('phone');
-  if (!input) {
-    return;
-  }
+	const inputPhone = document.querySelectorAll('.phone-input')
 
-  intlTelInput(input, {
-    initialCountry: 'DE',
-    autoPlaceholder: 'aggressive',
-    preferredCountries: ["DE", "GB"],
-    separateDialCode: true,
-  });
+	inputPhone.forEach(element => {
+		intlTelInput(element, {
+			initialCountry: 'DE',
+			autoPlaceholder: 'aggressive',
+			preferredCountries: ['DE', 'GB'],
+			separateDialCode: true,
+		})
+	})
 }

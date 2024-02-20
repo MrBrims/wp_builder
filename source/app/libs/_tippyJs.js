@@ -1,9 +1,9 @@
-import tippy from 'tippy.js';
+import tippy from 'tippy.js'
 
-export function tippyJs () {
-  tippy('[data-tippy-content]');
+export function tippyJs() {
+	tippy('[data-tippy-content]')
 }
 
 /* HTML code
-  <div data-tippy-content="text tolltip">content</div>
+  <span class="mytippy" data-tippy-content="text tolltip">content</span>
 */

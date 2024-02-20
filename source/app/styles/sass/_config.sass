@@ -5,23 +5,18 @@ $textcolor: #333 // Text Color
 $userfont: nameFont, sans-serif // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 
-// Bootstrap compatible gutter variable => $gutter
-// $grid-gutter-width: 30px
-// $gutter: $grid-gutter-width
+$layout: calc((100% - (var(--elements) - 1) * var(--gap)) / (var(--elements)))
+
 
 // IMPORT SECTION
 
-@import 'node_modules/swiper/swiper-bundle' // Style Swiper
-@import 'node_modules/@fancyapps/ui/dist/fancybox' // Style Fancybox
-@import 'node_modules/intl-tel-input/build/css/intlTelInput' // Style in tel input
-@import 'node_modules/vanillajs-datepicker/sass/datepicker' // Style Datepicker
-@import 'node_modules/nice-select2/dist/css/nice-select2' // Style Nice Select
-@import 'node_modules/tippy.js/dist/tippy' // Style Tippy.js
+// @import 'node_modules/swiper/swiper-bundle' // Style Swiper
+// @import 'node_modules/@fancyapps/ui/dist/fancybox' // Style Fancybox
+// @import 'node_modules/intl-tel-input/build/css/intlTelInput' // Style in tel input
+// @import 'node_modules/vanillajs-datepicker/sass/datepicker' // Style Datepicker
+// @import 'node_modules/nice-select2/dist/css/nice-select2' // Style Nice Select
+// @import 'node_modules/tippy.js/dist/tippy' // Style Tippy.js
 
-// @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
-// @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
-// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
-// @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
 
 // FONTS LOAD SECTION
 
@@ -72,9 +67,10 @@ input, textarea
 
 body
   font-family: $userfont
-  @include fluidFontSize(16px, 18px, 480px, 1280px, 18px)
-  @include fluidLineHeight(22px, 28px, 480px, 1280px, 28px)
+  font-size: 16px
+  line-height: 1.3
   color: $textcolor
   max-width: 1920px
+  margin: 0 auto
   position: relative
   overflow-x: hidden

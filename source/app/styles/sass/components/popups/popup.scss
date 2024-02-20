@@ -7,6 +7,8 @@
   background-color: rgba($color: #000, $alpha: 0.5);
   z-index: 1000;
   transition: all 0.8s ease-in-out;
+  overflow-y: auto;
+
   &__body {
     min-height: 100%;
     display: flex;
@@ -14,16 +16,19 @@
     align-items: center;
     padding: 20px 15px;
   }
+
   &__content {
     position: relative;
     width: 100%;
     background-color: #fff;
   }
+
   &__head {
     height: 40px;
     position: relative;
     border-bottom: 1px solid #cccccc;
   }
+
   &__close {
     right: 20px;
     top: 50%;
@@ -31,20 +36,23 @@
     position: absolute;
     width: 32px;
     height: 32px;
+
     svg path:nth-child(2) {
       transition: fill 0.3s ease-in-out;
     }
   }
+
   &__close:hover path:nth-child(2) {
     fill: $accent;
   }
-  &__inner {
-    
-  }
+
+  &__inner {}
+
   &.open {
     opacity: 1;
     visibility: visible;
   }
+
   .form__btn {
     margin-top: 0;
   }

@@ -36,12 +36,11 @@ class General
     add_action('do_robotstxt', [$this, 'addedRobotsTxt']);
     add_filter('upload_mimes', [$this, 'svgUploadAllow']);
 
-    // Костыль для Carbon Field (отображение миниатюр загруженных файлов)
+    // Подключение js и css для админки
     add_action('admin_enqueue_scripts', function () {
       wp_enqueue_style('style-admin', get_template_directory_uri() . '/assets/css/admin.css');
       wp_enqueue_script('script-admin', get_template_directory_uri() . '/assets/js/admin.js');
     }, 99);
-
   }
 
   /**

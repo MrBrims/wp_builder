@@ -1,0 +1,47 @@
+.faq {
+  &__head {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows .3s ease-in-out;
+
+    &.--open {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &__text {
+    min-height: 0;
+  }
+}
+
+/** HTML code
+  <div class="faq">
+		<div class="faq__wrapper">
+			<h4 class="faq__head faq-btn">
+				Навигация 1
+			</h4>
+			<div class="faq__content">
+				<div class="faq__text">
+					<p>Контент 1</p>
+				</div>
+			</div>
+		</div>
+		<div class="faq__wrapper">
+			<h4 class="faq__head faq-btn">
+				Навигация 2
+			</h4>
+			<div class="faq__content">
+				<div class="faq__text">
+					<p>Контент 2</p>
+				</div>
+			</div>
+		</div>
+	</div>
+*/

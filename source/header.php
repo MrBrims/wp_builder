@@ -25,7 +25,7 @@
 <body>
   <div class="wrapper">
     <header class="header lock-padding">
-      <?php get_template_part('template-parts/blocks/top-menu'); ?>
+      <?php get_template_part('template-parts/components/top-menu'); ?>
     </header>
 
     <main class="page">

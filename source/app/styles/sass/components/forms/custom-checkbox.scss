@@ -4,7 +4,8 @@
   height: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
-  &:checked + .style-checkbox {
+
+  &:checked+.style-checkbox {
     background-color: $accent;
     border: none;
     background-image: url(../images/dist/icons/checkbox.svg);
@@ -13,6 +14,7 @@
     background-size: 10px;
   }
 }
+
 .style-checkbox {
   width: 16px;
   height: 16px;
@@ -21,9 +23,12 @@
   flex-shrink: 0;
   margin-right: 10px;
   display: block;
+  cursor: pointer;
 }
 
 /** HTML code
-  <input class="custom-checkbox" type="checkbox">
-  <span class="style-checkbox"></span>
+  <label>
+    <input class="custom-checkbox" type="checkbox">
+    <span class="style-checkbox"></span>
+  </label>
 */

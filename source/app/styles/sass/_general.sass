@@ -7,8 +7,7 @@ body.--lock
   overflow: hidden
 
 h2 
-  @include fluidFontSize(26px, 40px, 480px, 1280px, 26px)
-  @include fluidLineHeight(32px, 46px, 480px, 1280px, 46px)
+  font-size: clamp(1.5rem, calc(1.14rem + 1.82vw), 2.5rem)
 
 #wpadminbar
   top: auto
@@ -23,12 +22,9 @@ h2
   justify-content: space-between
 
 .container
-  max-width: 1230px
-  @include fluidPaddingLR(10px, 15px, 480px, 1024px, 10px)
+  max-width: 1200px
+  padding: 0 clamp(0.625rem, 0.313vw + 0.563rem, 0.938rem)
   margin: 0 auto
 
 .section
   @include fluidMarginTB(40px, 80px, 480px, 1024px, 40px)
-
-.layot 
-  width: calc((100% - (var(--elements) - 1) * var(--gap)) / (var(--elements)))
